@@ -75,7 +75,8 @@
             <nav class="amado-nav">
                 <ul>
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="active"><a asp-controller="Book" asp-action="BookCategoryIndex">Books</a></li>
+                    <li><a asp-controller="Book" asp-action="Display">Books</a></li>
+                    <li class="active"><a asp-controller="Book" asp-action="BookCategoryIndex">Books Category</a></li>
                     <li><a href="product-details.html">Product</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
@@ -221,7 +222,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                
                     @foreach (var item in Model)
                     {
                         <!-- Single Product Area -->
@@ -266,7 +267,7 @@
             </div>
 
 </div>
-        </div>
+       
             <!-- ##### Footer Area Start ##### -->
             <footer class="footer_area clearfix">
                 <div class="container">

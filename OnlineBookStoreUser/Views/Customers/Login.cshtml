@@ -5,21 +5,42 @@
 }
 <p>@ViewBag.Error</p>
 <center>
-    <form class="form-signin" method="post" asp-controller="Customers" asp-action="login">
-        <img class="mb-4" src="~/images/logo.jpg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-
-        <div class="col-12 mb-3">
-            <label asp-for="UserName" class="sr-only">UserName</label>
-            <input type="text" asp-for="UserName" class="form-control" placeholder="Enter User Name">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/css/Register-Login.css">
+    <link href="~/js/Register-login.js">
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="login-reg-panel">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-register" for="log-reg-show">Login</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
         </div>
 
-        <div class="col-12 mb-3">
-            <label asp-for="Password" class="sr-only">Password</label>
-            <input type="password" asp-for="Password" class="form-control" placeholder="Enter Password">
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
         </div>
 
-        <a asp-controller="Cart" asp-action="Checkout" class="btn btn-sm btn-outline-success">Sign in</a>
-       
-    </form>
-    </center>
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="button" value="Login">
+                <a href="">Forgot password?</a>
+            </div>
+            <div class="register-show">
+                <h2>REGISTER</h2>
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <input type="button" value="Register">
+            </div>
+        </div>
+    </div>
+</center>

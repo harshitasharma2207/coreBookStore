@@ -25,5 +25,12 @@ namespace OnlineBookStoreUser.Controllers
             var books = context.Books.ToList();
             return View(books);
         }
+        [Route("details")]
+        public ActionResult Details(int id)
+        {
+            Books bk = context.Books.Where(x => x.BookId == id).SingleOrDefault();
+            context.SaveChanges();
+            return View(bk);
+        }
     }
 }
