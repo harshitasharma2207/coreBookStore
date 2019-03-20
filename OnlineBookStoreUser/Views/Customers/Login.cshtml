@@ -1,0 +1,25 @@
+﻿@model OnlineBookStoreUser.Models.Customers
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<p>@ViewBag.Error</p>
+<center>
+    <form class="form-signin" method="post" asp-controller="Customers" asp-action="login">
+        <img class="mb-4" src="~/images/logo.jpg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+        <div class="col-12 mb-3">
+            <label asp-for="UserName" class="sr-only">UserName</label>
+            <input type="text" asp-for="UserName" class="form-control" placeholder="Enter User Name">
+        </div>
+
+        <div class="col-12 mb-3">
+            <label asp-for="Password" class="sr-only">Password</label>
+            <input type="password" asp-for="Password" class="form-control" placeholder="Enter Password">
+        </div>
+
+        <a asp-controller="Cart" asp-action="Checkout" class="btn btn-sm btn-outline-success">Sign in</a>
+       
+    </form>
+    </center>
