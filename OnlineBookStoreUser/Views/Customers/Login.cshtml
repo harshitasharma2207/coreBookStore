@@ -3,44 +3,127 @@
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-<p>@ViewBag.Error</p>
-<center>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="~/css/Register-Login.css">
-    <link href="~/js/Register-login.js">
-    <!------ Include the above in your HEAD tag ---------->
-    <div class="login-reg-panel">
-        <div class="login-info-box">
-            <h2>Have an account?</h2>
-            <p>Lorem ipsum dolor sit amet</p>
-            <label id="label-register" for="log-reg-show">Login</label>
-            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <br />
+                <div class="col-12 mb-3">
+                    <label asp-for="UserName"><b style="color:burlywood;">User Name</b></label>
+                    <input type="text" asp-for="UserName" class="form-control" placeholder="Enter User Name">
+                </div>
+                <div class="col-12 mb-3">
+                    <label asp-for="Password"><b style="color:burlywood;">Password</b></label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Enter Password">
+                </div>
+                <div class="group" style="color:burlywood;">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign In">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk" style="color:burlywood;">
+                    <a href="#forgot">Forgot Password?</a>
+                </div>
+            </div>
+
+            <form asp-action="Register" asp-controller="Customers" style="color:burlywood;">
+                <div class="sign-up-htm">
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label asp-for="FirstName"><b>First Name</b></label>
+                            <input type="text" asp-for="FirstName" class="form-control" placeholder="Enter First Name">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="LastName"><b>Last Name</b></label>
+                            <input type="text" asp-for="LastName" class="form-control" placeholder="Enter Last Name">
+
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label asp-for="UserName"><b>User Name</b></label>
+                            <input type="text" asp-for="UserName" class="form-control" placeholder="Enter User Name">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label asp-for="Password"><b>Password</b></label>
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Enter Password">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label asp-for="Email"><b>Email</b></label>
+                            <input type="email" asp-for="Email" class="form-control" placeholder="Enter Email">
+                        </div>
+
+                        <br />
+                        <hr />
+                        <h4 class="col-12 mb-3">Billing Address</h4>
+                        <hr />
+                        <br />
+
+                        <div class="col-12 mb-3">
+                            <label asp-for="Address"><b>Address</b></label>
+                            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Country">Country</label>
+                                <select asp-for="Country" class="custom-select d-block w-100" id="country" required>
+                                    <option value="">Choose...</option>
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>UAE</option>
+                                    <option>Australia</option>
+                                    <option>England</option>
+                                    <option>China</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="City">City</label>
+                                <select asp-for="City" class="custom-select d-block w-100" id="state" required>
+                                    <option value="">Choose...</option>
+                                    <option>Delhi</option>
+                                    <option>Mumbai</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>Haryana</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="ZipCode"><b>Zip Code</b></label>
+                            <input type="text" asp-for="ZipCode" class="form-control" placeholder="Enter Zip Code">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Contact"><b>Contact</b></label>
+                            <input type="text" asp-for="Contact" class="form-control" placeholder="Enter Contact">
+                        </div>
+
+
+                        <div class="group">
+                            <br />
+
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <br />
+                            <br />
+                            <label for="tab-1"><a> Already Member?</a></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <div class="register-info-box">
-            <h2>Don't have an account?</h2>
-            <p>Lorem ipsum dolor sit amet</p>
-            <label id="label-login" for="log-login-show">Register</label>
-            <input type="radio" name="active-log-panel" id="log-login-show">
-        </div>
-
-        <div class="white-panel">
-            <div class="login-show">
-                <h2>LOGIN</h2>
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="button" value="Login">
-                <a href="">Forgot password?</a>
-            </div>
-            <div class="register-show">
-                <h2>REGISTER</h2>
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
-                <input type="button" value="Register">
-            </div>
-        </div>
-    </div>
-</center>
+ 

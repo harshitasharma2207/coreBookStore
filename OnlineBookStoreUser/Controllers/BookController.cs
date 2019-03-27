@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using coreBookStoreUser.Helper;
 using coreBookStoreUser.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OnlineBookStoreUser.Models;
 
 namespace OnlineBookStoreUser.Controllers
@@ -15,8 +16,10 @@ namespace OnlineBookStoreUser.Controllers
         BookStoreContext context = new BookStoreContext();
         public IActionResult BookCategoryIndex()
         {
-            var bookcategory = context.Books.ToList();
-            return View(bookcategory);
+            ViewBag.bookcategoryAuthor = context.Books.Include(c => c.Authors).ToList();
+            ViewBag.bookcategoryPublication = context.Books.Include(p => p.Publication).ToList();
+            ViewBag.bookcategoryBook = context.Books.ToList();
+            return View();
         }
 
         public IActionResult Display(int id)

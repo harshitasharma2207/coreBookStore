@@ -114,12 +114,12 @@
 
                 <div class="author-menu">
                     <ul>
-                        @foreach (var item in Model)
+                        @foreach (var item in ViewBag.bookcategoryAuthor)
                         {
 
                             @*<a asp-controller="Book" asp-action="BookCategoryIndex">*@
 
-                            <li class="active"><a href="#"><h5> @item.AuthorId </h5></a></li>
+                            <li class="active"><a href="#"><h6> @item.Authors.AuthorName </h6></a></li>
 
 
 
@@ -137,12 +137,12 @@
                 <!--  Catagories  -->
                 <div class="author-menu">
                     <ul>
-                        @foreach (var item in Model)
+                        @foreach (var item in ViewBag.bookcategoryPublication)
                         {
 
                             @*<a asp-controller="Book" asp-action="BookCategoryIndex">*@
 
-                            <li class="active"><a href="#"><h5> @item.AuthorId </h5></a></li>
+                            <li class="active"><a href="#"><h6> @item.Publication.PublicationName </h6></a></li>
 
 
 
@@ -223,7 +223,7 @@
                 </div>
 
                 
-                    @foreach (var item in Model)
+                    @foreach (var item in ViewBag.bookcategoryBook)
                     {
                         <!-- Single Product Area -->
                         <div class="col-12 col-sm-6 col-md-12 col-xl-6">

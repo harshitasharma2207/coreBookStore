@@ -54,7 +54,7 @@ namespace OnlineBookStoreUser.Models
 
                 entity.HasIndex(e => e.PublicationId);
 
-                entity.HasOne(d => d.Author)
+                entity.HasOne(d => d.Authors)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.AuthorId);
 

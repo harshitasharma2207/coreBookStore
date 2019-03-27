@@ -20,7 +20,7 @@ namespace OnlineBookStoreUser.Models
         public int BookCategoryId { get; set; }
         public int PublicationId { get; set; }
 
-        public Authors Author { get; set; }
+        public Authors Authors { get; set; }
         public BookCategories BookCategory { get; set; }
         public Publications Publication { get; set; }
         public ICollection<OrderBook> OrderBook { get; set; }
